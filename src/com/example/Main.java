@@ -12,6 +12,7 @@ public class Main {
     /**
      * Read one integer. If given input cannot be converted to integer,
      * prints error and return -1;
+     *
      * @return Integer read or -1 if invalid input entered
      */
     public static int safeReadInt() {
@@ -20,21 +21,22 @@ public class Main {
         try {
             result = Integer.parseInt(inputText);
         } catch (NumberFormatException ex) {
-            System.err.println("Zadal jsi text, který nelze převést na celé číslo: "+inputText);
+            System.err.println("Zadal jsi text, který nelze převést na celé číslo: " + inputText);
         }
         return result;
     }
 
     /**
      * Example of use of {@link Main#safeReadInt()}
-     *
+     * <p>
      * Read one integer from input and print it to output
+     *
      * @return integer from input
      */
     public static void readOneIntFromInputAndPrintIt() {
         System.out.println("Zadej číslo: ");
         int input = safeReadInt();
-        System.out.println("Zadal jsi: "+input);
+        System.out.println("Zadal jsi: " + input);
     }
 
     /**
@@ -52,21 +54,23 @@ public class Main {
 
     /**
      * Sum all input numbers (negative number terminates reading) and return result.
+     *
      * @return Sum of input numbers.
      */
     public static int sumAllInputUntilNegative() {
         int result = 0;
         int input;
-         do {
+        do {
             System.out.println("Zadej číslo: ");
             input = safeReadInt();
-             result += input;
+            result += input;
         } while (input >= 0);
-         return result;
+        return result;
     }
 
     /**
      * Store all input numbers in ArrayList (negative number terminates reading)
+     *
      * @return ArrayList of read values (terminating negative value is included)
      */
     public static ArrayList storeAllInputInArrayListUntilNegative() {
@@ -82,6 +86,7 @@ public class Main {
 
     /**
      * Print all integers from given list.
+     *
      * @param list List of integers to print.
      */
     public static void printAllIntegersFromList(ArrayList<Integer> list) {
@@ -94,10 +99,10 @@ public class Main {
     public static Integer sumAllIntegersFromList(ArrayList<Integer> list) {
         Integer sum = 0;
         for (Integer item : list) {
-                sum = sum + item;
-            }
-        return sum;
+            sum = sum + item;
         }
+        return sum;
+    }
 
     public static void main(String[] args) {
         // Example
@@ -108,7 +113,8 @@ public class Main {
         readIntsFromInputAndPrintItUntilNegative();
         // ---
         System.out.println("--- Task 2 - sum all until negative ---");
-        System.out.println("Celkový součet je: " + sumAllInputUntilNegative());;
+        System.out.println("Celkový součet je: " + sumAllInputUntilNegative());
+
         // ---
         System.out.println("--- Task 3 - read to list until negative ---");
         ArrayList<Integer> list = storeAllInputInArrayListUntilNegative();
